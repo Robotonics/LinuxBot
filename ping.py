@@ -27,21 +27,23 @@ gpio.init()
 gpio.setcfg(Trigger,gpio.OUTPUT)
 gpio.setcfg(Echo,gpio.INPUT)
 
-gpio.output(Trigger,0) # Set Trigger LOW
-time.sleep(0.5)
+def distance(void):
 
-gpio.output(Trigger,1)
-time.sleep(0.00001) # 10uS pulse
-gpio.output(Trigger,0)
-start=time.time()
-while gpio.input(Echo)==0:
+	gpio.output(Trigger,0) # Set Trigger LOW
+	time.sleep(0.5)
+	gpio.output(Trigger,1)
+	time.sleep(0.00001) # 10uS pulse
+	gpio.output(Trigger,0)
 	start=time.time()
-while gpio.input(Echo)==1:
-	stop=time.time()
+	while gpio.input(Echo)==0:
+		start=time.time()
+	while gpio.input(Echo)==1:
+		stop=time.time()
+	elapsed = stop-start
+	distance = elapsed * 34000
+	distance=distance/2
+	return(distance)
 
-elapsed = stop-start
-distance = elapsed * 34000
-print "Distance : %.1f" % distance
 
 
 
