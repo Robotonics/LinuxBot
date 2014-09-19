@@ -13,7 +13,7 @@ if not os.getegid() == 0:
 
 __author__ = "David Cotterill-Drew"
 __copyright__ = "Copyright 2014, RoboTonics"
-__credits__ = ["David Cotterill-Drew"]
+__credits__ = ["Matt Hawkins-http://www.raspberrypi-spy.co.uk/2012/12/ultrasonic-distance-measurement-using-python-part-1/"]
 __license__ = "GPL"
 __version__ = "2.0"
 __maintainer__ = __author__
