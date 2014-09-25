@@ -6,6 +6,10 @@ import time
 
 from pyA13.gpio import gpio
 from pyA13.gpio import port
+from numpy import *
+from array import *
+
+
 
 if not os.getegid() == 0:
     sys.exit('Script must be run as root')
@@ -13,7 +17,7 @@ if not os.getegid() == 0:
 
 __author__ = "David Cotterill-Drew"
 __copyright__ = "Copyright 2014, RoboTonics"
-__credits__ = ["Matt Hawkins-http://www.raspberrypi-spy.co.uk/2012/12/ultrasonic-distance-measurement-using-python-part-1/"]
+__credits__ = ["David Cotterill-Drew"]
 __license__ = "GPL"
 __version__ = "2.0"
 __maintainer__ = __author__
@@ -28,7 +32,6 @@ gpio.setcfg(Trigger,gpio.OUTPUT)
 gpio.setcfg(Echo,gpio.INPUT)
 
 def distance(void):
-
 	gpio.output(Trigger,0) # Set Trigger LOW
 	time.sleep(0.5)
 	gpio.output(Trigger,1)
@@ -42,6 +45,7 @@ def distance(void):
 	elapsed = stop-start
 	distance = elapsed * 34000
 	distance=distance/2
+	distance=round(distance,0)
 	return(distance)
 
 
