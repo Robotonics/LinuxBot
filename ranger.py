@@ -16,11 +16,19 @@ __maintainer__ = __author__
 __email__ = "roboshopz@gmail.com"
 
 def scan (void):
+	file = open("radar.txt", "w")
 	data = array('f',[ ])
-	for i in range(5):
+	for i in range(3):
 		distance=ping.distance(1)
 		data.append(distance)
-		result=sum(data)/len(data)
+	result=sum(data)/float(len(data))
+	result=round(result,2)
+	data = "{} \n".format(result)
+	with open("data.txt", "a") as myfile:
+        	myfile.write(data)
+	return result
 	print result
+	file.close()
+
 
 	
