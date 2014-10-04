@@ -35,7 +35,7 @@ gpio.setcfg(IN3,gpio.OUTPUT)
 gpio.setcfg(IN4,gpio.OUTPUT)
 gpio.setcfg(ENB,gpio.OUTPUT)
 
-def forward(void):
+def reverse(void):
 
 	gpio.output(ENA, 1)
 	gpio.output(ENB, 1)
@@ -44,7 +44,7 @@ def forward(void):
 	gpio.output(IN3, 0)
 	gpio.output(IN4, 1)
 
-def reverse(void):
+def forward(void):
 
 	gpio.output(ENA, 1)
 	gpio.output(ENB, 1)
@@ -71,5 +71,12 @@ def right(void):
 	gpio.output(IN3, 0)
 	gpio.output(IN4, 1)
 
+def stop(void):
 
+	gpio.output(ENA, 1)
+	gpio.output(ENB, 1)
+	gpio.output(IN1, 1)
+	gpio.output(IN2, 1)
+	gpio.output(IN3, 0)
+	gpio.output(IN4, 0)
 
