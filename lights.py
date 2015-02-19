@@ -55,6 +55,14 @@ def ledirr_off():
 def ledirl_off():
 	gpio.output(LEDIRL,0)
 
+def both_on():
+	gpio.output(LEDR,1)
+	gpio.output(LEDL,1)
+
+def both_off():
+	gpio.output(LEDR,0)
+	gpio.output(LEDL,0)
+
 
 
 
