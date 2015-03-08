@@ -48,7 +48,7 @@ gpio.setcfg(Trigger_Fl,gpio.OUTPUT)
 gpio.setcfg(Echo_Fl,gpio.INPUT)
 
 
-def distance_Ff():
+def front():
 	gpio.output(Trigger_Ff,0) # Set Trigger LOW
 	time.sleep(0.5)
 	gpio.output(Trigger_Ff,1)
@@ -68,7 +68,7 @@ def distance_Ff():
 
 
 
-def distance_Fr():
+def right():
 	gpio.output(Trigger_Fr,0) # Set Trigger LOW
 	time.sleep(0.5)
 	gpio.output(Trigger_Fr,1)
@@ -87,7 +87,7 @@ def distance_Fr():
 	print(distance_Fr)
 
 
-def distance_Fb():
+def back():
 	gpio.output(Trigger_Fb,0) # Set Trigger LOW
 	time.sleep(0.5)
 	gpio.output(Trigger_Fb,1)
@@ -105,7 +105,7 @@ def distance_Fb():
 	return(distance_Fb)
 	print(distance_Fb)
 
-def distance_Fl():
+def left():
 	gpio.output(Trigger_Fl,0) # Set Trigger LOW
 	time.sleep(0.5)
 	gpio.output(Trigger_Fl,1)
